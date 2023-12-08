@@ -1,0 +1,39 @@
+<html>
+<head></head>
+<body>
+    <h1>Voyage</h1>
+    <p>Release year: 2022</p>
+    <p>Artist: Pixies</p>
+</body>
+</html>
+
+<html>
+<head></head>
+<body>
+    {% for album in albums %}
+        <h1>{{ album.title }}</h1>
+        <p>Release year: {{ album.release_year }}</p>
+        <p>Artist: </p>
+        <hr>  <!-- Add a horizontal line or any other separator between albums -->
+    {% endfor %}
+</body>
+</html>
+
+
+<html>
+<head></head>
+<body>
+    {% for album in albums %}
+        <h1>{{ album.title }}</h1>
+        <p>Release year: {{ album.release_year }}</p>
+        <p>Artist: 
+            {% for artist in artists %}
+            {% if artist.id == album.artist_id %}
+                    {{ artist.name }}
+                {% endif %}
+            {% endfor %}
+        </p>
+        <hr>  
+    {% endfor %}
+</body>
+</html>

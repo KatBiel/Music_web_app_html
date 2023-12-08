@@ -1,0 +1,17 @@
+<html>
+<head></head>
+<body>
+    {% for album in albums %}
+        <h1>{{ album.title }}</h1>
+        <p>Release year: {{ album.release_year }}</p>
+        <p>Artist: 
+            {% for artist in artists %}
+            {% if artist.id == album.artist_id %}
+                    {{ artist.name }}
+                {% endif %}
+            {% endfor %}
+        </p>
+        <hr>  
+    {% endfor %}
+</body>
+</html>
