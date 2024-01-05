@@ -3,7 +3,7 @@
 <body>
     {% for album in albums %}
         <h1>{{ album.title }}</h1>
-        <p>Release year: {{ album.release_year }}</p>
+        <p class="t-release-year">Release year: {{ album.release_year }}</p>
         <p>Artist: 
             {% for artist in artists %}
             {% if artist.id == album.artist_id %}
@@ -13,5 +13,8 @@
         </p>
         <hr>  
     {% endfor %}
+    <p class="t-back">
+        <a href="/albums">Back to album list</a>
+    </p>
 </body>
 </html>

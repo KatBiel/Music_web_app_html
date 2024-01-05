@@ -5,12 +5,14 @@
   </head>
   <body>
     <h1>Albums</h1>
-    
-    {% for album in albums %}
-      <article>
-        <h2>{{album.title}}</h2>
-        <p>Released: {{album.release_year}}</p>
-      </article>
+
+    <ul>
+      {% for album in albums %}
+        <li>
+          <a href="/albums/{{album.id}}">{{album.title}}</a>
+        </li>
     {% endfor %}
+    </ul>
+    <a href="/albums/new">Add new album</a>
   </body>
 </html>
